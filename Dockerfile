@@ -147,7 +147,7 @@ RUN zypper --non-interactive update && \
 
 RUN zypper --non-interactive update && \
     zypper --non-interactive install -t pattern devel_basis \
-        && zypper --non-interactive clean
+    && zypper --non-interactive clean
 
 
 RUN mkdir /workspace && mkdir -p /var/ccache && ln -s /var/ccache /tmp/ccache
