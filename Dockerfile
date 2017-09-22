@@ -63,7 +63,6 @@ RUN zypper --non-interactive update && \
         git \
         git-review \
         perl-XML-XPath \
-        java-*-openjdk-devel \
         jq \
         autoconf \
         automake \
@@ -85,6 +84,17 @@ RUN zypper --non-interactive update && \
 
 RUN zypper --non-interactive update && \
     zypper --non-interactive install \
+    python-devel \
+    python-virtualenv \
+    python-setuptools \
+    python-pip \
+    python-wheel \
+    libmysqlclient-devel \
+    kernel-devel \
+    valgrind \
+    doxygen graphviz python-jinja2 asciidoc dblatex \
+    source-highlight python-sphinx libxml2 libffi-devel python-cffi \
+    python-pyparsing libstdc++6 python-sphinx_rtd_theme \
     glibc-devel-static \
     java-1_8_0-openjdk-devel \
     yum-utils \
