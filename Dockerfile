@@ -79,6 +79,7 @@ RUN zypper --non-interactive update && \
         m4 \
         pkg-config \
         python-virtualenv \
+        libopenssl-devel \
         && zypper --non-interactive clean
 
 
