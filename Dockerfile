@@ -157,7 +157,7 @@ RUN zypper --non-interactive update && \
     && zypper --non-interactive clean
 
 RUN zypper --non-interactive update && \
-    zypper --non-interactive install -t pattern devel_basis \
+    zypper --non-interactive install -t pattern devel_basis rpm-build \
     && zypper --non-interactive clean
 
 
