@@ -154,10 +154,11 @@ RUN zypper --non-interactive update && \
     libxslt-devel \
     ruby-devel \
     zlib-devel \
+    rpm-build \
     && zypper --non-interactive clean
 
 RUN zypper --non-interactive update && \
-    zypper --non-interactive install -t pattern devel_basis rpm-build \
+    zypper --non-interactive install -t pattern devel_basis \
     && zypper --non-interactive clean
 
 
