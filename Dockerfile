@@ -8,6 +8,13 @@ LABEL Version="1.0"
 # Setup the environment
 ENV DEBIAN_FRONTEND=noninteractive
 
+
+RUN zypper clean -a && \
+    zypper --non-interactive --gpg-auto-import-keys ar http://download.opensuse.org/update/leap/42.3/oss/openSUSE:Leap:42.3:Update.repo && \
+    zypper --gpg-auto-import-keys ref && \
+    zypper --non-interactive --gpg-auto-import-keys ar http://download.opensuse.org/repositories/Cloud:/Tools/openSUSE_Leap_42.3/ Cloud:Tools.repo
+
+
 RUN zypper --non-interactive update && \
     zypper --non-interactive install  \
         bash \
