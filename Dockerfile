@@ -1,4 +1,4 @@
-FROM opensuse:42.2
+FROM opensuse:42.3
 MAINTAINER Ed Kern <ejk@cisco.com>
 LABEL Description="VPP opensuse baseline"
 LABEL Vendor="cisco.com"
@@ -262,6 +262,6 @@ RUN mkdir /workspace && mkdir -p /var/ccache && ln -s /var/ccache /tmp/ccache
 ENV CCACHE_DIR=/var/ccache
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en'
 
-RUN gem install rake
+#RUN gem install rake
 
 RUN gem install package_cloud
