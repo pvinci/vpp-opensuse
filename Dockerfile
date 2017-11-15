@@ -56,7 +56,6 @@ RUN zypper --non-interactive update && \
         vim \
         wget \
         chrpath \
-        nasm \
         unzip \
         xz \
         puppet \
@@ -82,6 +81,93 @@ RUN zypper --non-interactive update && \
         libopenssl-devel \
         && zypper --non-interactive clean
 
+RUN zypper install -y https://download.opensuse.org/tumbleweed/repo/oss/suse/x86_64/nasm-2.13.01-2.2.x86_64.rpm
+
+#python resources and libraries
+RUN zypper --non-interactive update && \
+    zypper --non-interactive install \
+    python-devel \
+    python-setuptools \
+    python-pip \
+    python-wheel \
+    python-mock \
+    python3-devel \
+    python3-pip \
+    python-rpm-macros \
+    shadow \
+    libnuma-devel \
+    && zypper --non-interactive clean
+
+#documentation packages
+RUN zypper --non-interactive update && \
+    zypper --non-interactive install \
+    doxygen \
+    graphviz \
+    asciidoc \
+    dblatex \
+    source-highlight \
+    python-sphinx \
+    libxml2 \
+    python-jinja2 \
+    python-cffi \
+    python-pyparsing \
+    python-sphinx_rtd_theme \
+    && zypper --non-interactive clean
+    
+#compilation packages
+RUN zypper --non-interactive update && \
+    zypper --non-interactive install \
+    cpp \
+    gcc \
+    gcc-c++ \
+    cmake \
+    make \
+    gcc6 \
+    libstdc++-devel \
+    ruby-devel \
+    && zypper --non-interactive clean
+
+#debugging    
+RUN zypper --non-interactive update && \
+    zypper --non-interactive install \
+    valgrind \
+    rrdtool \
+    rrdtool-devel \
+    autoconf \
+    automake \
+    ccache \
+    chrpath \
+    && zypper --non-interactive clean
+
+#misc tool
+RUN zypper --non-interactive update && \
+    zypper --non-interactive install \
+    openssl \
+    emacs \
+    curl \
+    git \
+    git-review \
+    unzip \
+    devscripts \
+    iproute2 \
+    ethtool \
+    vlan \
+    bridge-utils \
+    vim \
+    gdb \
+    gdbserver \
+    lsb-release \
+    distribution-release \
+    && zypper --non-interactive clean
+
+#tldk   
+RUN zypper --non-interactive update && \
+    zypper --non-interactive install \
+    libpcap-devel \
+    libcap-devel \
+    && zypper --non-interactive clean
+
+
 
 RUN zypper --non-interactive update && \
     zypper --non-interactive install \
@@ -97,6 +183,8 @@ RUN zypper --non-interactive update && \
     source-highlight python-sphinx libxml2 libffi-devel python-cffi \
     python-pyparsing libstdc++6 python-sphinx_rtd_theme \
     glibc-devel-static \
+    libclang \
+    llvm-clang \
     java-1_8_0-openjdk-devel \
     yum-utils \
     openssl \
@@ -115,6 +203,7 @@ RUN zypper --non-interactive update && \
     source-highlight \
     libxml2 \
     libffi-devel \
+    check-devel \
     python-cffi \
     python-pyparsing \
     libstdc++6 \
@@ -165,5 +254,7 @@ RUN zypper --non-interactive update && \
 RUN mkdir /workspace && mkdir -p /var/ccache && ln -s /var/ccache /tmp/ccache
 ENV CCACHE_DIR=/var/ccache
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en'
+
+RUN gem install rake
 
 RUN gem install package_cloud
