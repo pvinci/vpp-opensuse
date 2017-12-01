@@ -257,7 +257,7 @@ RUN zypper --non-interactive update && \
     zypper --non-interactive install -t pattern devel_basis \
     && zypper --non-interactive clean
 
-RUN pip install six pyexpect subprocess32 cffi git+https://github.com/klement/py-lispnetworking@setup
+RUN pip install six subprocess32 cffi git+https://github.com/klement/py-lispnetworking@setup
 
 RUN mkdir /workspace && mkdir -p /var/ccache && ln -s /var/ccache /tmp/ccache
 ENV CCACHE_DIR=/var/ccache
