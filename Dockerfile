@@ -251,7 +251,7 @@ RUN zypper --non-interactive update && \
     ruby-devel \
     zlib-devel \
     rpm-build \
-    boost-devel \
+    boost_1_61-devel \
     && zypper --non-interactive clean
 
 RUN zypper --non-interactive update && \
