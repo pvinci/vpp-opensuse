@@ -64,6 +64,7 @@ RUN zypper --non-interactive update && \
         wget \
         chrpath \
         unzip \
+        zip \
         xz \
         puppet \
         git \
