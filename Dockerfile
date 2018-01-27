@@ -263,6 +263,7 @@ RUN zypper --non-interactive update && \
 
 RUN mkdir /workspace && mkdir -p /var/ccache && ln -s /var/ccache /tmp/ccache
 ENV CCACHE_DIR=/var/ccache
+ENV CCACHE_READONLY=true
 ENV MAKE_PARALLEL_FLAGS -j 4
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en'
 
