@@ -253,6 +253,7 @@ RUN zypper --non-interactive update && \
     zlib-devel \
     rpm-build \
     boost_1_61-devel \
+    mbedtls-devel \
     && zypper --non-interactive clean
 
 RUN zypper --non-interactive update && \
