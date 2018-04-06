@@ -87,6 +87,7 @@ RUN zypper --non-interactive update && \
         libapr1 \
         libtool \
         m4 \
+        yum-utils \
         pkg-config \
         python-virtualenv \
         libopenssl-devel \
@@ -198,7 +199,6 @@ RUN zypper --non-interactive update && \
     libclang \
     llvm-clang \
     java-1_8_0-openjdk-devel \
-    yum-utils \
     openssl \
     python-devel \
     python-virtualenv \
