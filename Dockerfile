@@ -124,6 +124,7 @@ RUN zypper --non-interactive update && \
     python-jinja2 \
     python-cffi \
     python-pyparsing \
+    python-ply \
     python-sphinx_rtd_theme \
     && zypper --non-interactive clean
     
