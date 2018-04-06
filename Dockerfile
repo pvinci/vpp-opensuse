@@ -83,7 +83,6 @@ RUN zypper --non-interactive update && \
         debhelper \
         ed \
         gettext \
-        indent \
         lcov \
         libapr1 \
         libtool \
@@ -94,6 +93,7 @@ RUN zypper --non-interactive update && \
         && zypper --non-interactive clean
 
 RUN zypper install -y https://download.opensuse.org/tumbleweed/repo/oss/x86_64/nasm-2.13.03-1.1.x86_64.rpm
+RUN zypper install -y https://download.opensuse.org/repositories/devel:/tools/openSUSE_Leap_42.3/x86_64/indent-2.2.11-67.d_t.3.x86_64.rpm
 
 #python resources and libraries
 RUN zypper --non-interactive update && \
@@ -200,7 +200,6 @@ RUN zypper --non-interactive update && \
     java-1_8_0-openjdk-devel \
     yum-utils \
     openssl \
-    indent \
     python-devel \
     python-virtualenv \
     python-setuptools \
