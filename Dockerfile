@@ -283,3 +283,5 @@ RUN wget -O /w/Downloads/v0.48.tar.gz http://github.com/01org/intel-ipsec-mb/arc
 #RUN gem install rake
 
 RUN gem install package_cloud
+RUN mkdir -p /w/workspace
+RUN mkdir -p /home/jenkins
