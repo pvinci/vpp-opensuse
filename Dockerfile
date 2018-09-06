@@ -93,7 +93,7 @@ RUN zypper --non-interactive update && \
         libopenssl-devel \
         && zypper --non-interactive clean
 
-RUN zypper install -y https://download.opensuse.org/tumbleweed/repo/oss/x86_64/nasm-2.13.03-1.1.x86_64.rpm
+RUN zypper install -y https://download.opensuse.org/tumbleweed/repo/oss/x86_64/nasm-2.13.03-1.2.x86_64.rpm
 #RUN wget https://download.opensuse.org/repositories/devel:/tools/openSUSE_Leap_42.3/x86_64/indent-2.2.11-67.d_t.3.x86_64.rpm && yum install -y indent-2.2.11-67.d_t.3.x86_64.rpm && rm indent-2.2.11-67.d_t.3.x86_64.rpm || true
 RUN zypper --non-interactive --gpg-auto-import-keys ar https://download.opensuse.org/repositories/devel:/tools/openSUSE_Leap_42.3/devel:tools.repo && zypper --gpg-auto-import-keys ref && zypper install -y indent
 
